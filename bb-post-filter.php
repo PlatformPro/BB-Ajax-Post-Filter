@@ -1,5 +1,5 @@
 <?php
-// The part that goes into frontend.php ?>
+/////////////////// The part that goes into frontend.php ?>
 
 <?php // Form to filter posts by category ?>
 <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
@@ -17,6 +17,9 @@
   <input type="hidden" name="test" value="<?php echo $settings->my_field;?>">
 </form>
 <div id="response"></div>
+
+
+
 
 <?php // Script to load wp query function with ajax ?>
 <script>
@@ -41,8 +44,11 @@ jQuery(function($){
 </script>
 
 
+
+
+
 <?php
-// The part that goes into functions.php ?>
+/////////////////// The part that goes into functions.php
 function misha_filter_function($test){
 	$args = array(
 		'orderby' => 'date', // we will sort posts by date
@@ -78,3 +84,5 @@ echo $_POST['test'];
 
 add_action('wp_ajax_myfilter', 'misha_filter_function');
 add_action('wp_ajax_nopriv_myfilter', 'misha_filter_function');
+
+?>
